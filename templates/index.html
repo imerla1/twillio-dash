@@ -1,0 +1,39 @@
+ <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>title</title>
+  </head>
+  <body>
+    <table>
+        <tr>
+            <th>#</th>
+            <th>Direction</th>
+            <th>Date Created</th>
+            <th>Date Sent</th>
+            <th>Error Code</th>
+            <th>Error Message</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Status</th>
+            <th>Cost</th>
+            <th>Body</th>
+        </tr>
+    {% for x in sms %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ x.direction }}</td>
+            <td>{{ x.date_created }}</td>
+            <td>{{ x.date_sent }}</td>
+            <td>{{ x.error_code }}</td>
+            <td>{{ x.error_message }}</td>
+            <td>{{ x.from_ }}</td>
+            <td>{{ x.to }}</td>
+            <td>{{ x.status }}</td>
+            <td>{{ x.price }} {{ x.price_unit }}</td>
+            <td>{{ x.body }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+  </body>
+</html>
