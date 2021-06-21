@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url("{{url_for('static', filename='geometric-1732847_1920.jpg')}}");
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+          }
+          
+          .uppercase {
+            text-transform: uppercase;
+          }
+          
+          .btn {
+            display: inline-block;
+            background: transparent;
+            color: inherit;
+            font: inherit;
+            border: 0;
+            outline: 0;
+            padding: 0;
+            transition: all 200ms ease-in;
+            cursor: pointer;
+          }
+          .btn--primary {
+            background: #7f8ff4;
+            color: #fff;
+            box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+            border-radius: 2px;
+            padding: 12px 36px;
+          }
+          .btn--primary:hover {
+            background: #6c7ff2;
+          }
+          .btn--primary:active {
+            background: #7f8ff4;
+            box-shadow: inset 0 0 10px 2px rgba(0, 0, 0, 0.2);
+          }
+          .btn--inside {
+            margin-left: -96px;
+          }
+          
+          .form__field {
+            width: 360px;
+            background: #fff;
+            color: black;
+            font: inherit;
+            box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+            border: 0;
+            outline: 0;
+            padding: 22px 18px;
+          }
+          
+          .form__field:focus{
+              background-color: springgreen;
+          }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="container__item">
+                <input type="password" class="form__field" placeholder="Enter Access Key" id="psk"/>
+                <button type="button" class="btn btn--primary btn--inside uppercase" id="submit-btn">Send</button>
+            
+        </div>
+        
+        
+    </div>
+    <script>
+        let submitBtn = document.getElementById("submit-btn")
+        let psk = document.getElementById("psk")
+        submitBtn.addEventListener("click", ()=>{
+            window.location.href = `query?token=${psk.value}`
+        })
+    </script>
+</body>
+</html>

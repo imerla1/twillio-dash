@@ -9,7 +9,7 @@ password = "abc123"
 @app.route("/")
 def index():
     # sms = fetch_sms()
-    return render_template("prompt.html")
+    return render_template("greet.html")
 
 @app.route("/verify", methods=["GET", "POST"])
 def verify():
@@ -32,3 +32,5 @@ def query():
         return render_template("index.html", sms=sms)
     else:
         return f"You aren't allowed To See This Page", 400
+
+app.run(debug=True)
